@@ -17,7 +17,7 @@ Forked from [a gist by gf3][sexy-bash-orig].
 [Support us with a monthly donation and help us continue our activities][donations] or [spread word on Twitter][twitter]
 
 [donations]: https://opencollective.com/sexy-bash-prompt#backer
-[twitter]: https://twitter.com/intent/tweet?text=Bash%20prompt%20with%20colors%2C%20git%20statuses%2C%20and%20git%20branches&url=https%3A%2F%2Fgithub.com%2Ftwolfson%2Fsexy-bash-prompt&via=sexybashprompt
+[twitter]: https://twitter.com/intent/tweet?text=Bash%20prompt%20with%20colors%2C%20git%20statuses%2C%20and%20git%20branches&url=https%3A%2F%2Fgithub.com%2Fhoner08%2Fsexy-bash-prompt&via=sexybashprompt
 
 <a href="https://opencollective.com/sexy-bash-prompt/backer/0/website" target="_blank"><img src="https://opencollective.com/sexy-bash-prompt/backer/0/avatar.svg"></a>
 <a href="https://opencollective.com/sexy-bash-prompt/backer/1/website" target="_blank"><img src="https://opencollective.com/sexy-bash-prompt/backer/1/avatar.svg"></a>
@@ -88,7 +88,7 @@ Become a sponsor and get your logo on our README on GitHub with a link to your s
 One line install:
 
 ```bash
-(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
+(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/honer08/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 ```
 
 ### My colors don't look as advertised
