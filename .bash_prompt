@@ -20,6 +20,7 @@ if tput setaf 1 &> /dev/null; then
 
   # If the terminal supports at least 256 colors, write out our 256 color based set
   if [[ "$(tput colors)" -ge 256 ]] &> /dev/null; then
+    sexy_bash_prompt_datetime_color="$sexy_bash_prompt_bold$(tput setaf 5)" # BOLD BLUE
     sexy_bash_prompt_user_color="$sexy_bash_prompt_bold$(tput setaf 27)" # BOLD BLUE
     sexy_bash_prompt_preposition_color="$sexy_bash_prompt_bold$(tput setaf 7)" # BOLD WHITE
     sexy_bash_prompt_device_color="$sexy_bash_prompt_bold$(tput setaf 39)" # BOLD CYAN
@@ -28,6 +29,7 @@ if tput setaf 1 &> /dev/null; then
     sexy_bash_prompt_git_progress_color="$sexy_bash_prompt_bold$(tput setaf 9)" # BOLD RED
   else
   # Otherwise, use colors from our set of 8
+    sexy_bash_prompt_datetime_color="$sexy_bash_prompt_bold$(tput setaf 5)" # BOLD BLUE
     sexy_bash_prompt_user_color="$sexy_bash_prompt_bold$(tput setaf 4)" # BOLD BLUE
     sexy_bash_prompt_preposition_color="$sexy_bash_prompt_bold$(tput setaf 7)" # BOLD WHITE
     sexy_bash_prompt_device_color="$sexy_bash_prompt_bold$(tput setaf 6)" # BOLD CYAN
@@ -48,6 +50,7 @@ else
   # done
 
   sexy_bash_prompt_reset="\033[m"
+  sexy_bash_prompt_datetime_color="\033[0;35m" # PURPLE
   sexy_bash_prompt_user_color="\033[1;34m" # BLUE
   sexy_bash_prompt_preposition_color="\033[1;37m" # WHITE
   sexy_bash_prompt_device_color="\033[1;36m" # CYAN
@@ -66,6 +69,7 @@ fi
 
 # Apply any color overrides that have been set in the environment
 if [[ -n "$PROMPT_USER_COLOR" ]]; then sexy_bash_prompt_user_color="$PROMPT_USER_COLOR"; fi
+if [[ -n "$PROMPT_DATETIME_COLOR" ]]; then sexy_bash_prompt_datetime_color="$PROMPT_DATETIME_COLOR"; fi
 if [[ -n "$PROMPT_PREPOSITION_COLOR" ]]; then sexy_bash_prompt_preposition_color="$PROMPT_PREPOSITION_COLOR"; fi
 if [[ -n "$PROMPT_DEVICE_COLOR" ]]; then sexy_bash_prompt_device_color="$PROMPT_DEVICE_COLOR"; fi
 if [[ -n "$PROMPT_DIR_COLOR" ]]; then sexy_bash_prompt_dir_color="$PROMPT_DIR_COLOR"; fi
@@ -259,7 +263,7 @@ sexy_bash_prompt_get_git_info () {
 
 # Define the sexy-bash-prompt
 PS1="\[$sexy_bash_prompt_reset\]\
-\[\D{%F %T}\] -- \
+\[$sexy_bash_prompt_datetime_color\][\D{%F %T}\] -- \[$sexy_bash_prompt_reset\]\
 \[$sexy_bash_prompt_user_color\]\u\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_preposition_color\]at\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_device_color\]\h\[$sexy_bash_prompt_reset\] \
