@@ -90,6 +90,9 @@ One line install:
 ```bash
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/honer08/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 ```
+One line install (and remove the git cloned local repo)
+
+```(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/honer08/sexy-bash-prompt && cd sexy-bash-prompt && make install && rm -rf /tmp/sexy-bash-prompt) && source ~/.bashrc```
 
 ### My colors don't look as advertised
 If you are seeing a screen like this:
