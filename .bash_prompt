@@ -10,7 +10,7 @@ while ((${#line} < cols)); do line+="$line"; done
 printf '%s%s%s\n' "$start" "${line:0:cols}" "$end"
 }
 
-horizontal_line=horiz_line()
+horizontal_line=echo $(horiz_line())
 
 # If we are on a colored terminal
 if tput setaf 1 &> /dev/null; then
