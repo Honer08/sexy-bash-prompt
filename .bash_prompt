@@ -3,12 +3,14 @@
 # https://github.com/twolfson/sexy-bash-prompt
 # Forked from gf3, https://gist.github.com/gf3/306785
 
-function horizontal_line() {
+function horiz_line() {
 local start=$'\e(0' end=$'\e(B' line='qqqqqqqqqqqqqqqq'
 local cols=${COLUMNS:-$(tput cols)}
 while ((${#line} < cols)); do line+="$line"; done
 printf '%s%s%s\n' "$start" "${line:0:cols}" "$end"
 }
+
+horizontal_line=horiz_line()
 
 # If we are on a colored terminal
 if tput setaf 1 &> /dev/null; then
@@ -269,7 +271,7 @@ sexy_bash_prompt_get_git_info () {
 }
 
 # Define the sexy-bash-prompt
-PS1="\nhorizontal_line()\n\[$sexy_bash_prompt_reset\]\
+PS1="\n\[$horizontal_line\]\n\[$sexy_bash_prompt_reset\]\
 \[$sexy_bash_prompt_datetime_color\]\[\D{%F %T}\]\[$sexy_bash_prompt_reset\] -- \
 \[$sexy_bash_prompt_user_color\]\u\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_preposition_color\]at\[$sexy_bash_prompt_reset\] \
