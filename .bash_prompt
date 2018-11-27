@@ -3,7 +3,7 @@
 # https://github.com/twolfson/sexy-bash-prompt
 # Forked from gf3, https://gist.github.com/gf3/306785
 
-horizontal_line() {
+function horizontal_line() {
 local start=$'\e(0' end=$'\e(B' line='qqqqqqqqqqqqqqqq'
 local cols=${COLUMNS:-$(tput cols)}
 while ((${#line} < cols)); do line+="$line"; done
